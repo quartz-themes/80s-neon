@@ -451,23 +451,18 @@ for i in "${themes[@]}"; do
   cd ${i}
   # git config pull.rebase >&- || git config pull.rebase false
   git config --local pull.rebase false
-  # git config remote.template.url >&- || git remote add template git@github.com:quartz-themes/quartz-themes-preview-template.git
-  git config remote.template.url >&- || git remote add template https://github.com/quartz-themes/quartz-themes-preview-template.git
-  git pull template v4 -X theirs --no-edit || git pull template v4 -X theirs --allow-unrelated-histories --no-edit
-  git pull origin v4 -X theirs --no-edit || git pull origin v4 -X theirs --allow-unrelated-histories --no-edit
+  git config remote.template.url >&- || git remote add template git@github.com:quartz-themes/quartz-themes-preview-template.git
+  git pull template v4 -X theirs --no-edit
+  git pull origin v4 -X theirs --no-edit
   # rm .github/workflows/deploy-preview.yml
   # rm .github/workflows/update.yml
-
-  # rm -rf quartz/i18n/*
-  # cp -r ../../templater/quartz/i18n/* quartz/i18n/
-
   git commit -a -m "Updated to latest template."
 
   # replace pageTitle: "Quartz 4", with pageTitle: "${i}", in `quartz.config.ts`
-  sed -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' -i "" quartz.config.ts
+  # sed -i -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' quartz.config.ts
 
   # replace baseUrl: "quartz.jzhao.xyz", with baseUrl: "quartz-themes.github.io/${i}", in `quartz.config.ts`
-  sed -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' -i "" quartz.config.ts
+  # sed -i -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' quartz.config.ts
 
   # replace ---.*?Quartz is a fast, with ---\n\nQuartz is a fase, in `docs/index.md` using perl
   # perl -0777 -i -pe 's/\n---.*?Quartz is a fast/\n---\n\nQuartz is a fast/' docs/index.md
@@ -475,7 +470,7 @@ for i in "${themes[@]}"; do
   # replace Quartz is a fast with [${i}](https://github.com/quartz-themes/${i})\n\nQuartz is a fast, in `docs/index.md`
   # sed -i -e 's|Quartz is a fast|[Quartz Themes on GitHub](https://github.com/saberzero1/quartz-themes/tree/master/themes/'${i}').\n\nQuartz is a fast|' docs/index.md
 
-  git commit -a -m "Applied overrides to template."
+  # git commit -a -m "Updated theme to latest template."
 
   git push || git push --force
   # git push
