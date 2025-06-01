@@ -452,8 +452,8 @@ for i in "${themes[@]}"; do
   # git config pull.rebase >&- || git config pull.rebase false
   git config --local pull.rebase false
   git config remote.template.url >&- || git remote add template git@github.com:quartz-themes/quartz-themes-preview-template.git
-  git pull template v4 -X theirs --no-edit
-  git pull origin v4 -X theirs --no-edit
+  git pull template v4 -X theirs --no-edit || git pull template v4 -X theirs --allow-unrelated-histories --no-edit
+  git pull origin v4 -X theirs --no-edit || git pull origin v4 -X theirs --allow-unrelated-histories --no-edit
   # rm .github/workflows/deploy-preview.yml
   # rm .github/workflows/update.yml
   git commit -a -m "Updated to latest template."
