@@ -1,7 +1,7 @@
 #!/bin/bash
 # Just in case
 
-declare -a small=("flexcyon.tui")
+declare -a small=("blood-rush")
 
 declare -a themes=(
   "80s-neon"
@@ -32,7 +32,6 @@ declare -a themes=(
   "ayu-light-mirage"
   "ayu-mirage"
   "azure"
-  "base16-default-dark"
   "base2tone"
   "baseline"
   "behave-dark"
@@ -220,7 +219,6 @@ declare -a themes=(
   "monokai-ristretto"
   "moonlight"
   "mulled-wine"
-  "museifu-basic"
   "mushin"
   "muted-blue"
   "nebula"
@@ -239,9 +237,11 @@ declare -a themes=(
   "nobb"
   "noctilux"
   "noctis"
-  "noctis-viola"
   "nord"
+  "nordic"
+  "northern-sky"
   "nostromo"
+  "nota-limonada-light"
   "notation"
   "notation-2"
   "notation"
@@ -267,7 +267,6 @@ declare -a themes=(
   "origami"
   "origin"
   "osaka-jade"
-  "oscura"
   "overcast"
   "oxygen"
   "pale"
@@ -298,7 +297,6 @@ declare -a themes=(
   "purple-owl"
   "pxld"
   "qlean"
-  "quietus"
   "quillcode"
   "radiance"
   "ravenloft"
@@ -396,7 +394,6 @@ declare -a themes=(
   "velvet-moon"
   "venom"
   "vercel-geist"
-  "vermilion"
   "vesnea-vibe"
   "vesper"
   "vibrant"
@@ -416,28 +413,7 @@ declare -a themes=(
   "zario"
   "zen"
   "zenburn"
-  "abate"
-  "agate"
-  "al-dente"
-  "comfort"
-  "dashboard"
-  "dayspring"
-  "gdct"
-  "handwriting-kalam"
-  "ink"
-  "lavender-mist"
-  "mint-breeze"
-  "neuborder"
-  "nordic"
-  "northern-sky"
-  "nota-limonada-light"
-  "obsidian-boom"
-  "parfait"
-  "perso"
-  "sparkling-day"
-  "w95"
-  "winter-spices"
-  "wiselight"
+
 )
 
 cd ..
@@ -460,10 +436,10 @@ for i in "${themes[@]}"; do
   git commit -a -m "Updated to latest template."
 
   # replace pageTitle: "Quartz 4", with pageTitle: "${i}", in `quartz.config.ts`
-  # sed -i -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' quartz.config.ts
+  sed -i -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' quartz.config.ts
 
   # replace baseUrl: "quartz.jzhao.xyz", with baseUrl: "quartz-themes.github.io/${i}", in `quartz.config.ts`
-  # sed -i -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' quartz.config.ts
+  sed -i -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' quartz.config.ts
 
   # replace ---.*?Quartz is a fast, with ---\n\nQuartz is a fase, in `docs/index.md` using perl
   # perl -0777 -i -pe 's/\n---.*?Quartz is a fast/\n---\n\nQuartz is a fast/' docs/index.md
