@@ -53,8 +53,8 @@ declare -a themes=(
   "carbon"
   "cardstock"
   "catppuccin"
-  "catppuccin.frappe"
-  "catppuccin.macchiato"
+  catppuccin.frappe
+  catppuccin.macchiato
   "celestial-night"
   "charcoal"
   "chiaroscuroflow"
@@ -85,10 +85,8 @@ declare -a themes=(
   "dark-moss"
   "darkember"
   "darkyan"
-  "dashboard"
   "dawn"
   "dedication"
-  "dedication-2"
   "deep-submerge"
   "deeper-work"
   "default"
@@ -124,7 +122,7 @@ declare -a themes=(
   "firefly"
   "flatcap"
   "flexcyon"
-  "flexcyon.tui"
+  flexcyon.tui
   "flexoki"
   "flexoki-warm"
   "flexoki"
@@ -158,20 +156,20 @@ declare -a themes=(
   "ion"
   "iridium"
   "its-theme"
-  "its-theme.blue"
-  "its-theme.drowned"
-  "its-theme.gray"
-  "its-theme.its-dark"
-  "its-theme.minimalist"
-  "its-theme.nord"
-  "its-theme.notion"
-  "its-theme.rainbow"
-  "its-theme.school-days"
-  "its-theme.tangerine-dunes"
-  "its-theme.ttrpg-dnd"
-  "its-theme.ttrpg-pathfinder"
-  "its-theme.ttrpg-pathfinder-remastered"
-  "its-theme.ttrpg-wotc"
+  its-theme.blue
+  its-theme.drowned
+  its-theme.gray
+  its-theme.its-dark
+  its-theme.minimalist
+  its-theme.nord
+  its-theme.notion
+  its-theme.rainbow
+  its-theme.school-days
+  its-theme.tangerine-dunes
+  its-theme.ttrpg-dnd
+  its-theme.ttrpg-pathfinder
+  its-theme.ttrpg-pathfinder-remastered
+  its-theme.ttrpg-wotc
   "jotter"
   "kakano"
   "kanagawa-paper"
@@ -192,8 +190,8 @@ declare -a themes=(
   "magicuser"
   "mammoth"
   "maple"
-  "maple.default"
-  "maple.minimal"
+  maple.default
+  maple.minimal
   "marathon"
   "material-3"
   "material-flat"
@@ -209,8 +207,8 @@ declare -a themes=(
   "minimal-edge"
   "minimal-red"
   "minimal-resources"
+  "minimalist-studio"
   "minimalists-paradise"
-  "mint-breeze"
   "mistymauve"
   "modern-genz-vibedose"
   "mono-black-monochrome-charcoal"
@@ -219,6 +217,7 @@ declare -a themes=(
   "monokai-ristretto"
   "moonlight"
   "mulled-wine"
+  "museifu-basic"
   "mushin"
   "muted-blue"
   "nebula"
@@ -238,10 +237,7 @@ declare -a themes=(
   "noctilux"
   "noctis"
   "nord"
-  "nordic"
-  "northern-sky"
   "nostromo"
-  "nota-limonada-light"
   "notation"
   "notation-2"
   "notation"
@@ -267,6 +263,7 @@ declare -a themes=(
   "origami"
   "origin"
   "osaka-jade"
+  "oscura"
   "overcast"
   "oxygen"
   "pale"
@@ -413,7 +410,28 @@ declare -a themes=(
   "zario"
   "zen"
   "zenburn"
-
+  "abate"
+  "agate"
+  "al-dente"
+  "comfort"
+  "dashboard"
+  "dayspring"
+  "gdct"
+  "handwriting-kalam"
+  "ink"
+  "lavender-mist"
+  "mint-breeze"
+  "neuborder"
+  "nordic"
+  "northern-sky"
+  "nota-limonada-light"
+  "obsidian-boom"
+  "parfait"
+  "perso"
+  "sparkling-day"
+  "w95"
+  "winter-spices"
+  "wiselight"
 )
 
 cd ..
