@@ -429,7 +429,8 @@ cd temp
 #for i in "${small[@]}"; do
 for i in "${themes[@]}"; do
   echo "Start ${i}"
-  git clone git@github.com:quartz-themes/${i}.git
+  # git clone git@github.com:quartz-themes/${i}.git
+  git clone https://github.com/quartz-themes/${i}
   cd ${i}
   # git config pull.rebase >&- || git config pull.rebase false
   git config --local pull.rebase false
