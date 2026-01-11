@@ -297,6 +297,7 @@ declare -a themes=(
   "purple-owl"
   "pxld"
   "qlean"
+  "quietus"
   "quillcode"
   "radiance"
   "ravenloft"
