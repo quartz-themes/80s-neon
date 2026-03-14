@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: quartz-themes.github.io/80s-neon/80s-neon/80s-neon
+  baseUrl: quartz-themes.github.io/80s-neon/80s-neon/80s-neon/80s-neon
   ignorePatterns:
     - private
     - templates
