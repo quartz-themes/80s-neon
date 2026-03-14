@@ -247,8 +247,8 @@ plugins:
   - source: github:saberzero1/quartz-themes
     enabled: true
     options:
-      theme: default
-      variation: null
+      theme: 80s-neon.null
+      variation: 
 layout:
   groups:
     toolbar:
