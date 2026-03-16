@@ -134,14 +134,8 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       const umamiScript = document.createElement("script");
       umamiScript.src = "${cfg.analytics.host ?? "https://analytics.umami.is"}/script.js";
       umamiScript.setAttribute("data-website-id", "${cfg.analytics.websiteId}");
-      umamiScript.setAttribute("data-auto-track", "false");
+      umamiScript.setAttribute("data-auto-track", "true");
       umamiScript.defer = true;
-      umamiScript.onload = () => {
-        umami.track();
-        document.addEventListener("nav", () => {
-          umami.track();
-        });
-      };
 
       document.head.appendChild(umamiScript);
     `)
@@ -239,6 +233,29 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       })();
       \`
       document.head.appendChild(matomoScript);
+    `)
+  } else if (cfg.analytics?.provider === "vercel") {
+    /**
+     * script from {@link https://vercel.com/docs/analytics/quickstart?framework=html#add-the-script-tag-to-your-site|Vercel Docs}
+     */
+    componentResources.beforeDOMLoaded.push(`
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    `)
+    componentResources.afterDOMLoaded.push(`
+      const vercelInsightsScript = document.createElement("script")
+      vercelInsightsScript.src = "/_vercel/insights/script.js"
+      vercelInsightsScript.defer = true
+      document.head.appendChild(vercelInsightsScript)
+    `)
+  } else if (cfg.analytics?.provider === "rybbit") {
+    componentResources.afterDOMLoaded.push(`
+      const rybbitScript = document.createElement("script");
+      rybbitScript.src = "${cfg.analytics.host ?? "https://app.rybbit.io"}/api/script.js";
+      rybbitScript.setAttribute("data-site-id", "${cfg.analytics.siteId}");
+      rybbitScript.async = true;
+      rybbitScript.defer = true;
+
+      document.head.appendChild(rybbitScript);
     `)
   }
 
